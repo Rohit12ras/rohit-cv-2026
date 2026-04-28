@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rohit Anand Singh Chauhan - CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #000428, #004e92, #1a1a2e, #16213e, #0f3460);
+      background-size: 400% 400%;
+      animation: gradientShift 15s ease infinite;
+      color: #f5f5f7;
+      overflow-x: hidden;
+      line-height: 1.6;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background:
+        radial-gradient(ellipse at top left, rgba(120, 119, 198, 0.3), transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(74, 144, 226, 0.3), transparent 50%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      background: radial-gradient(ellipse at top, rgba(29, 29, 31, 0.5) 0%, transparent 70%);
+      position: relative;
+    }
+
+    .profile-container {
+      text-align: center;
+      margin-bottom: 60px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .profile-img {
+      width: 160px;
+      height: 160px;
+      border-radius: 80px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0 auto 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 60px;
+      font-weight: 700;
+      color: white;
+      box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+      transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .profile-img:hover {
+      transform: scale(1.05);
+    }
+
+    .name {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #ffffff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeInUp 1s ease-out 0.2s both;
+    }
+
+    .tagline {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #a1a1a6;
+      margin-bottom: 30px;
+      letter-spacing: 0.01em;
+      animation: fadeInUp 1s ease-out 0.3s both;
+    }
+
+    .contact-info {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      animation: fadeInUp 1s ease-out 0.4s both;
+    }
+
+    .contact-item {
+      font-size: 1rem;
+      color: #a1a1a6;
+    }
+
+    .contact-item a {
+      color: #667eea;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .contact-item a:hover {
+      color: #ffffff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 80px 20px;
+    }
+
+    .section {
+      margin-bottom: 80px;
+      animation: fadeInUp 1s ease-out;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 40px;
+      background: linear-gradient(90deg, #ffffff 0%, #a1a1a6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .summary-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 24px;
+      padding: 40px;
+      margin-bottom: 30px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .summary-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .summary-text {
+      font-size: 1.15rem;
+      color: #d1d1d6;
+      line-height: 1.8;
+      text-align: justify;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      opacity: 0;
+      transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-subtitle {
+      font-size: 1.05rem;
+      color: #667eea;
+      font-weight: 500;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-meta {
+      font-size: 0.9rem;
+      color: #86868b;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .card-note {
+      background: rgba(102, 126, 234, 0.1);
+      border-left: 3px solid #667eea;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      color: #d1d1d6;
+      font-style: italic;
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements {
+      list-style: none;
+      padding: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .achievements li {
+      padding-left: 25px;
+      position: relative;
+      margin-bottom: 14px;
+      color: #d1d1d6;
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .achievements li:before {
+      content: "▹";
+      position: absolute;
+      left: 0;
+      color: #667eea;
+      font-weight: bold;
+      font-size: 1.3em;
+    }
+
+    .highlight-card {
+      background: rgba(102, 126, 234, 0.08);
+      border: 1px solid rgba(102, 126, 234, 0.2);
+      border-radius: 20px;
+      padding: 35px;
+      margin-bottom: 30px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .highlight-card:hover {
+      transform: translateY(-4px);
+      background: rgba(102, 126, 234, 0.12);
+      box-shadow: 0 20px 40px rgba(102, 126, 234, 0.2);
+    }
+
+    .highlight-title {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .skills-section {
+      margin-top: 30px;
+    }
+
+    .skills-category {
+      margin-bottom: 30px;
+    }
+
+    .skills-category-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 20px;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill-tag {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      color: #d1d1d6;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .skill-tag:hover {
+      background: rgba(102, 126, 234, 0.15);
+      border-color: rgba(102, 126, 234, 0.4);
+      transform: translateY(-2px);
+      color: #ffffff;
+    }
+
+    .education-card {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 20px;
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .education-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .degree {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .institution {
+      font-size: 1rem;
+      color: #667eea;
+      font-weight: 500;
+      margin-bottom: 5px;
+    }
+
+    .edu-date {
+      font-size: 0.9rem;
+      color: #86868b;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 25px;
+    }
+
+    .cert-item {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #d1d1d6;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cert-item:hover {
+      background: rgba(102, 126, 234, 0.1);
+      border-color: rgba(102, 126, 234, 0.3);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .name {
+        font-size: 2.5rem;
+      }
+
+      .tagline {
+        font-size: 1.2rem;
+      }
+
+      .section-title {
+        font-size: 2rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+
+    @media print {
+      body {
+        background: white;
+        color: black;
+      }
+      .card, .summary-card, .highlight-card, .education-card {
+        background: #f5f5f7;
+        border: 1px solid #d1d1d6;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      .achievements li, .card-meta, .summary-text {
+        color: #333;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+  <div class="hero-section">
+    <div class="profile-container">
+      <div class="profile-img">RC</div>
+      <h1 class="name">Rohit Anand Singh Chauhan</h1>
+      <p class="tagline">Senior SRE Leader · Seeking Director of Engineering Role</p>
+      <div class="contact-info">
+        <span class="contact-item">📧 <a href="mailto:rohit12ras@gmail.com">rohit12ras@gmail.com</a></span>
+        <span class="contact-item">📱 +36 70 400 6621</span>
+        <span class="contact-item">📍 Budapest, Hungary</span>
+        <span class="contact-item">🔗 <a href="https://www.linkedin.com/in/rohitanandsinghchauhan" target="_blank">LinkedIn</a></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <!-- Summary -->
+    <section class="section">
+      <h2 class="section-title">Professional Summary</h2>
+      <div class="summary-card">
+        <p class="summary-text">
+          Senior technology leader with <strong>15+ years at SAP SuccessFactors</strong>, progressing through multiple high-impact roles across SRE, DevOps, infrastructure, and AI/ML operations. Proven track record of leading critical initiatives, managing mission-critical systems serving <strong>7,000+ enterprise customers</strong>, and driving transformation through AI-powered automation. Key contributor to <strong>all major SuccessFactors milestones</strong> including Oracle-to-HANA migration (3,000+ customers), multi-datacenter expansion (20+ global DCs), and enterprise-scale AI knowledge management systems. Successfully mentored and led teams of <strong>15+ engineers</strong> while managing complex cross-functional projects. Ready to leverage extensive technical expertise and demonstrated leadership to step into <strong>Director of Engineering or Senior Technical Management role</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Leadership Journey -->
+    <section class="section">
+      <h2 class="section-title">Leadership Journey & Director Readiness</h2>
+      <div class="highlight-card">
+        <h3 class="highlight-title">🎯 15-Year Evolution: From IC to Strategic Technical Leader</h3>
+        <ul class="achievements">
+          <li><strong>Multi-Team Experience:</strong> Worked across all major SuccessFactors modules (EC, RCM, ONB, LMS, PM) gaining comprehensive understanding of entire HXM ecosystem</li>
+          <li><strong>Built & Led Budapest Security & Vulnerability Team:</strong> Founded and led 22-person team managing OS security patching for 34,000+ VMs across all datacenters with zero downtime, operating 24/7 covering SUSE, RedHat, Windows, Linux, and databases (HANA, MS SQL) using Tanium</li>
+          <li><strong>Current SRE Leadership (2026):</strong> Leading HCM SuccessFactors SRE operations managing mission-critical services for 7,000+ enterprise customers, driving AI/ML integration, and establishing operational excellence frameworks across global teams</li>
+          <li><strong>All Platform Milestones:</strong> Key contributor to every significant transformation including Oracle-to-HANA migration, datacenter expansion, cloud modernization, and AI/ML integration</li>
+          <li><strong>Technical Leadership:</strong> Evolved from IC to leading cross-functional teams of 22+ engineers, establishing best practices and culture of operational excellence</li>
+          <li><strong>Strategic Initiative Ownership:</strong> Independently drove enterprise-scale projects including AI knowledge management, predictive incident detection, and infrastructure automation</li>
+          <li><strong>Business Impact:</strong> Delivered 70% MTTR reduction, €2M+ annual cost savings, 99.95%+ uptime, and 40% operational efficiency improvement</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- AI Excellence -->
+    <section class="section">
+      <h2 class="section-title">AI & Technical Leadership Excellence</h2>
+      <div class="highlight-card">
+        <h3 class="highlight-title">🤖 AI/ML-Powered Engineering Innovation</h3>
+        <ul class="achievements">
+          <li><strong>Enterprise AI Knowledge Management:</strong> Architected vector database system processing 240+ incident patterns with ML-categorized 100+ exception types, reducing MTTR by 70%</li>
+          <li><strong>LLM Integration & RAG:</strong> Designed production RAG pipelines with Claude/GPT-4 APIs integrating 103 SAP KBAs, achieving 90% accuracy in incident resolution</li>
+          <li><strong>AIOps Platform:</strong> Built ML-powered anomaly detection analyzing 50M+ daily log events, achieving 85% accuracy in predictive incident detection</li>
+          <li><strong>AI Architecture:</strong> Designed multi-tenant AI infrastructure supporting real-time semantic search and intelligent incident routing</li>
+          <li><strong>Predictive Analytics:</strong> Implemented ML models preventing 200+ critical incidents, saving €5M+ in revenue protection</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Experience -->
+    <section class="section">
+      <h2 class="section-title">Professional Experience</h2>
+
+      <div class="card">
+        <div class="card-title">Senior Site Reliability Engineer / Service Owner / Technical Lead</div>
+        <div class="card-subtitle">SAP SuccessFactors (SAP Hungary Kft.)</div>
+        <div class="card-meta">📍 Budapest, Hungary · 📅 Jan 2011 – Present (15 years)</div>
+
+        <div class="card-note">
+          <strong>15-Year Journey:</strong> Progressed through multiple roles within SAP SuccessFactors, evolving from IT Analyst to Senior SRE and Technical Lead, gaining deep expertise across infrastructure, cloud operations, DevOps, and AI/ML-powered reliability engineering.
+        </div>
+
+        <ul class="achievements">
+          <li><strong>Team Building & Leadership:</strong> Built and led 22-person Budapest-based security operations team managing enterprise-scale OS patching operations 24/7 with zero downtime</li>
+          <li><strong>Enterprise Security Patching:</strong> Owned OS security patching strategy for 34,000+ VMs across 20+ datacenters covering SUSE, RedHat, Windows, Linux, and critical databases (SAP HANA, MS SQL) using Tanium platform</li>
+          <li><strong>Critical Patch Management:</strong> Led release validation and deployment of critical security patches across multi-OS infrastructure ensuring zero-downtime operations and compliance</li>
+          <li><strong>Service Ownership:</strong> Managed enterprise HXM SaaS platforms serving 7,000+ customers with 99.95%+ availability across 21,000+ VMs in 20+ datacenters</li>
+          <li><strong>AI/ML Transformation:</strong> Led SRE operations transformation through AI integration, reducing operational overhead by 40%</li>
+          <li><strong>Critical Incident Leadership:</strong> Led global Sev-1/Sev-2 incident response, achieving 99.5% SLA compliance</li>
+          <li><strong>Strategic Projects:</strong> Led Oracle-to-HANA migration (3,000+ customers) and established datacenter in 90 days</li>
+          <li><strong>Automation Excellence:</strong> Implemented Kubernetes, Prometheus, Grafana, Dynatrace, Splunk, improving efficiency by 60%</li>
+          <li><strong>DevOps Pipeline:</strong> Architected CI/CD improving deployment from monthly to daily releases</li>
+          <li><strong>Cloud Infrastructure:</strong> Managed hybrid cloud optimizing costs by €2M annually (30% reduction)</li>
+          <li><strong>Performance Engineering:</strong> Reduced API response times from 2.5s to 300ms</li>
+          <li><strong>Team Leadership:</strong> Mentored 22+ engineers; certified Docker & Kubernetes trainer</li>
+          <li><strong>Disaster Recovery:</strong> Architected multi-region DR achieving RPO < 15 min, RTO < 1 hour</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">IT Consultant – Infrastructure & Cloud Operations</div>
+        <div class="card-subtitle">TATA Consultancy Services (TCS)</div>
+        <div class="card-meta">📅 Sep 2012 – Apr 2016 (3.5 years)</div>
+
+        <ul class="achievements">
+          <li>Managed large-scale infrastructure for Fortune 500 clients</li>
+          <li>Led cloud migration projects implementing IaC and DevOps practices</li>
+          <li>Designed monitoring solutions improving incident detection</li>
+          <li>Managed client relationships exceeding SLA commitments</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="card-title">IT Analyst – Systems & Infrastructure</div>
+        <div class="card-subtitle">Indmax Pvt Ltd</div>
+        <div class="card-meta">📅 Jan 2011 – Sep 2012 (1.5 years)</div>
+
+        <ul class="achievements">
+          <li>Managed server build, configuration, and maintenance</li>
+          <li>Provided technical support for critical production issues</li>
+          <li>Implemented automation scripts improving efficiency</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Key Projects -->
+    <section class="section">
+      <h2 class="section-title">Key Strategic Projects</h2>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-title">🚀 AI Knowledge Management</div>
+          <div class="card-meta">2024-Present</div>
+          <ul class="achievements">
+            <li>27 case documents, 240+ incidents</li>
+            <li>103 SAP KBAs integrated</li>
+            <li>100+ exceptions from 1,335 JIRA tickets</li>
+            <li><strong>Impact:</strong> 70% MTTR reduction</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">🎯 Predictive Incident Detection</div>
+          <div class="card-meta">2023-2024</div>
+          <ul class="achievements">
+            <li>50M+ log events analyzed daily</li>
+            <li>85% prediction accuracy</li>
+            <li>False positives: 60% → 20%</li>
+            <li><strong>Impact:</strong> €5M revenue protected</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">☁️ Infrastructure Modernization</div>
+          <div class="card-meta">2022-2023</div>
+          <ul class="achievements">
+            <li>200+ apps migrated to Kubernetes</li>
+            <li>€2M annual cost reduction</li>
+            <li>Daily deployments (30x improvement)</li>
+            <li><strong>Impact:</strong> 99.95% uptime</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section class="section">
+      <h2 class="section-title">Technical Expertise</h2>
+
+      <div class="skills-section">
+        <div class="skills-category">
+          <div class="skills-category-title">🤖 AI/ML & Data Science</div>
+          <div class="skills-grid">
+            <div class="skill-tag">LLM Integration (Claude, GPT-4)</div>
+            <div class="skill-tag">Vector Databases</div>
+            <div class="skill-tag">RAG Systems</div>
+            <div class="skill-tag">Prompt Engineering</div>
+            <div class="skill-tag">MLOps</div>
+            <div class="skill-tag">Anomaly Detection</div>
+            <div class="skill-tag">Python ML Stack</div>
+            <div class="skill-tag">NLP</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">☁️ Cloud & Infrastructure</div>
+          <div class="skills-grid">
+            <div class="skill-tag">Azure</div>
+            <div class="skill-tag">GCP</div>
+            <div class="skill-tag">SAP Converged Cloud</div>
+            <div class="skill-tag">Kubernetes</div>
+            <div class="skill-tag">Docker</div>
+            <div class="skill-tag">Terraform</div>
+            <div class="skill-tag">CloudFoundry</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">🔧 SRE & DevOps</div>
+          <div class="skills-grid">
+            <div class="skill-tag">Site Reliability Engineering</div>
+            <div class="skill-tag">CI/CD (Jenkins)</div>
+            <div class="skill-tag">Tanium</div>
+            <div class="skill-tag">Ansible</div>
+            <div class="skill-tag">Incident Management</div>
+            <div class="skill-tag">Performance Engineering</div>
+            <div class="skill-tag">GitOps</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">📊 Monitoring & Observability</div>
+          <div class="skills-grid">
+            <div class="skill-tag">Dynatrace</div>
+            <div class="skill-tag">Splunk</div>
+            <div class="skill-tag">Prometheus & Grafana</div>
+            <div class="skill-tag">ELK Stack</div>
+            <div class="skill-tag">Distributed Tracing</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">💾 Databases</div>
+          <div class="skills-grid">
+            <div class="skill-tag">SAP HANA (Expert)</div>
+            <div class="skill-tag">Oracle</div>
+            <div class="skill-tag">MySQL</div>
+            <div class="skill-tag">Cassandra</div>
+            <div class="skill-tag">Redis</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">🏢 SAP Technologies</div>
+          <div class="skills-grid">
+            <div class="skill-tag">SAP SuccessFactors HXM</div>
+            <div class="skill-tag">Employee Central</div>
+            <div class="skill-tag">Recruiting (RCM)</div>
+            <div class="skill-tag">Onboarding</div>
+            <div class="skill-tag">Learning (LMS)</div>
+            <div class="skill-tag">OData API</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="section">
+      <h2 class="section-title">Education & Certifications</h2>
+
+      <div class="education-card">
+        <div class="degree">Bachelor of Science (B.Sc.) - Computer Science and Programming</div>
+        <div class="institution">Jawaharlal Nehru Technological University (JNTU), Hyderabad</div>
+        <div class="edu-date">2006 – 2010</div>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 20px;">Professional Certifications</h3>
+        <div class="certs-grid">
+          <div class="cert-item">✓ Microsoft Azure Certified</div>
+          <div class="cert-item">✓ Google Cloud Platform</div>
+          <div class="cert-item">✓ ITIL v3 & v4 Foundation</div>
+          <div class="cert-item">✓ CCNA/CCNP Certified</div>
+          <div class="cert-item">✓ Docker Certified</div>
+          <div class="cert-item">✓ Kubernetes Trainer</div>
+        </div>
+      </div>
+
+      <div style="margin-top: 40px;">
+        <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 20px;">Languages</h3>
+        <div class="skills-grid">
+          <div class="skill-tag">English - Fluent</div>
+          <div class="skill-tag">Hindi - Native</div>
+          <div class="skill-tag">Hungarian - Basic</div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

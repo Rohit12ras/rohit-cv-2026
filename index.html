@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rohit Anand Singh Chauhan - CV</title>
+  <title>Rohit Anand Singh Chauhan - Forward Deployed Engineer CV</title>
   <style>
     * {
       margin: 0;
@@ -401,6 +401,16 @@
       transform: translateY(-2px);
     }
 
+    code {
+      font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+      background: rgba(102, 126, 234, 0.15);
+      border: 1px solid rgba(102, 126, 234, 0.25);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-size: 0.88em;
+      color: #a9b8ff;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -528,18 +538,70 @@
     }
 
     @media print {
-      body {
-        background: white;
-        color: black;
+      @page {
+        margin: 12mm;
       }
+      * {
+        animation: none !important;
+        transition: none !important;
+      }
+      body {
+        background: white !important;
+        color: #1a1a1a !important;
+      }
+      body::before {
+        display: none !important;
+      }
+      .hero-section {
+        min-height: auto !important;
+        padding: 0 0 20px !important;
+        background: none !important;
+      }
+      .profile-img {
+        box-shadow: none !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      .name, .section-title {
+        -webkit-text-fill-color: #0b1f4d !important;
+        color: #0b1f4d !important;
+        background: none !important;
+      }
+      .tagline, .contact-item { color: #333 !important; }
+      .contact-item a { color: #1a4b9e !important; }
+      .container { padding: 0 10px !important; }
+      .section { margin-bottom: 24px !important; }
+      .section-title { page-break-after: avoid; }
       .card, .summary-card, .highlight-card, .education-card {
-        background: #f5f5f7;
-        border: 1px solid #d1d1d6;
+        background: #f7f8fb !important;
+        border: 1px solid #d1d5e0 !important;
+        box-shadow: none !important;
+        transform: none !important;
+        page-break-inside: avoid;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
-      .achievements li, .card-meta, .summary-text {
-        color: #333;
+      .highlight-title, .card-title, .skills-category-title, .degree { color: #0b1f4d !important; }
+      .card-subtitle, .institution { color: #1a4b9e !important; }
+      .achievements li, .card-meta, .summary-text, .edu-date { color: #2a2a2a !important; }
+      .achievements li strong, .summary-text strong { color: #0b1f4d !important; }
+      .achievements li:before { color: #1a4b9e !important; }
+      .skill-tag, .cert-item {
+        background: #eef1f8 !important;
+        border: 1px solid #c7cde0 !important;
+        color: #1f2a44 !important;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      code {
+        background: #eef1f8 !important;
+        border: 1px solid #c7cde0 !important;
+        color: #1a4b9e !important;
+      }
+      .card-note {
+        background: #eef1f8 !important;
+        border-left: 3px solid #1a4b9e !important;
+        color: #2a2a2a !important;
       }
     }
   </style>
@@ -550,7 +612,7 @@
     <div class="profile-container">
       <div class="profile-img">RC</div>
       <h1 class="name">Rohit Anand Singh Chauhan</h1>
-      <p class="tagline">Senior SRE Leader · Seeking Director of Engineering Role</p>
+      <p class="tagline">Applied AI &amp; Forward Deployment Engineer · Production LLM Systems at Enterprise Scale</p>
       <div class="contact-info">
         <span class="contact-item">📧 <a href="mailto:rohit12ras@gmail.com">rohit12ras@gmail.com</a></span>
         <span class="contact-item">📱 +36 70 400 6621</span>
@@ -567,39 +629,37 @@
       <h2 class="section-title">Professional Summary</h2>
       <div class="summary-card">
         <p class="summary-text">
-          Senior technology leader with <strong>15+ years at SAP SuccessFactors</strong>, progressing through multiple high-impact roles across SRE, DevOps, infrastructure, and AI/ML operations. Proven track record of leading critical initiatives, managing mission-critical systems serving <strong>7,000+ enterprise customers</strong>, and driving transformation through AI-powered automation. Key contributor to <strong>all major SuccessFactors milestones</strong> including Oracle-to-HANA migration (3,000+ customers), multi-datacenter expansion (20+ global DCs), and enterprise-scale AI knowledge management systems. Successfully mentored and led teams of <strong>15+ engineers</strong> while managing complex cross-functional projects. Ready to leverage extensive technical expertise and demonstrated leadership to step into <strong>Director of Engineering or Senior Technical Management role</strong>.
+          Senior technical engineer and leader with <strong>15+ years at SAP SuccessFactors</strong>, delivering production systems for <strong>7,000+ enterprise customers</strong>. Over the past 3 years I have personally <strong>built and deployed production LLM applications</strong> — including a live <strong>MCP server</strong>, an AI-first context-repository product, RAG pipelines on <strong>Claude &amp; GPT-4</strong>, and agentic workflow automation — translating frontier AI into measurable business outcomes (70% MTTR reduction, €5M+ revenue protected). I operate directly at the customer frontier: fronting <strong>Sev-1/P1 escalations</strong> for the world's largest enterprises, explaining complex technical situations to executive stakeholders under pressure, and shipping solutions in demanding production environments. My work combines <strong>hands-on AI/LLM engineering</strong>, deep enterprise infrastructure expertise, and high-stakes customer-facing communication — the exact blend a <strong>Forward Deployed Engineer</strong> brings to transformational enterprise AI adoption.
         </p>
       </div>
     </section>
 
-    <!-- Leadership Journey -->
+    <!-- Production AI/LLM Engineering - Shipped Artifacts -->
     <section class="section">
-      <h2 class="section-title">Leadership Journey & Director Readiness</h2>
+      <h2 class="section-title">Production AI/LLM Engineering — Shipped Artifacts</h2>
       <div class="highlight-card">
-        <h3 class="highlight-title">🎯 15-Year Evolution: From IC to Strategic Technical Leader</h3>
+        <h3 class="highlight-title">🤖 Built &amp; deployed production LLM tooling used by engineers and agents</h3>
         <ul class="achievements">
-          <li><strong>Multi-Team Experience:</strong> Worked across all major SuccessFactors modules (EC, RCM, ONB, LMS, PM) gaining comprehensive understanding of entire HXM ecosystem</li>
-          <li><strong>Built & Led Budapest Security & Vulnerability Team:</strong> Founded and led 22-person team managing OS security patching for 34,000+ VMs across all datacenters with zero downtime, operating 24/7 covering SUSE, RedHat, Windows, Linux, and databases (HANA, MS SQL) using Tanium</li>
-          <li><strong>Current SRE Leadership (2026):</strong> Leading HCM SuccessFactors SRE operations managing mission-critical services for 7,000+ enterprise customers, driving AI/ML integration, and establishing operational excellence frameworks across global teams</li>
-          <li><strong>All Platform Milestones:</strong> Key contributor to every significant transformation including Oracle-to-HANA migration, datacenter expansion, cloud modernization, and AI/ML integration</li>
-          <li><strong>Technical Leadership:</strong> Evolved from IC to leading cross-functional teams of 22+ engineers, establishing best practices and culture of operational excellence</li>
-          <li><strong>Strategic Initiative Ownership:</strong> Independently drove enterprise-scale projects including AI knowledge management, predictive incident detection, and infrastructure automation</li>
-          <li><strong>Business Impact:</strong> Delivered 70% MTTR reduction, €2M+ annual cost savings, 99.95%+ uptime, and 40% operational efficiency improvement</li>
+          <li><strong>MCP Server (built &amp; deployed, production):</strong> Authored and deployed a live Model Context Protocol server exposing <code>list_cases</code> and semantic <code>search_cases</code> tools over a curated SRE knowledge base — connectable directly from Claude Code / Claude Desktop. Lets any AI assistant search and retrieve resolution playbooks during live incident investigation.</li>
+          <li><strong>SRE Case-Document Knowledge Base:</strong> Built a knowledge base of 38 standardized case documents mined from <strong>1,393 ServiceNow incidents and 811 JIRA tickets</strong>, with a machine-readable RAG export (<code>cases_kb.json</code>, 203 semantic chunks) feeding SAP AI Core / LangChain / LlamaIndex grounding pipelines.</li>
+          <li><strong>AI-First Context Repository (built, production, peer-reviewed):</strong> Built a context-repository <em>product</em> with specific focus on <strong>human vs AI/LLM absorption</strong> — the same knowledge is structured for human reading <em>and</em> for machine consumption via stable anchor-addressable IDs, a governance layer (provenance, freshness, confidence, versioning) so agents know how much to trust each fact, and MCP-enumerable registries any workflow can iterate before calling live telemetry.</li>
+          <li><strong>Agentic Workflow Automation (n8n, production):</strong> Building production AI-augmented workflows that integrate internal systems <em>and</em> LLM calls — orchestrating multi-step operations such as RCA, triage, and change validation.</li>
+          <li><strong>Deployment pattern codification:</strong> Designed these artifacts to be repeatable, governed, and agent-consumable — the same "codify a repeatable deployment pattern" discipline central to forward-deployed engineering.</li>
         </ul>
       </div>
     </section>
 
-    <!-- AI Excellence -->
+    <!-- Enterprise Customer-Facing Impact -->
     <section class="section">
-      <h2 class="section-title">AI & Technical Leadership Excellence</h2>
+      <h2 class="section-title">Enterprise Customer-Facing Impact</h2>
       <div class="highlight-card">
-        <h3 class="highlight-title">🤖 AI/ML-Powered Engineering Innovation</h3>
+        <h3 class="highlight-title">🤝 High-stakes, customer-facing technical delivery</h3>
         <ul class="achievements">
-          <li><strong>Enterprise AI Knowledge Management:</strong> Architected vector database system processing 240+ incident patterns with ML-categorized 100+ exception types, reducing MTTR by 70%</li>
-          <li><strong>LLM Integration & RAG:</strong> Designed production RAG pipelines with Claude/GPT-4 APIs integrating 103 SAP KBAs, achieving 90% accuracy in incident resolution</li>
-          <li><strong>AIOps Platform:</strong> Built ML-powered anomaly detection analyzing 50M+ daily log events, achieving 85% accuracy in predictive incident detection</li>
-          <li><strong>AI Architecture:</strong> Designed multi-tenant AI infrastructure supporting real-time semantic search and intelligent incident routing</li>
-          <li><strong>Predictive Analytics:</strong> Implemented ML models preventing 200+ critical incidents, saving €5M+ in revenue protection</li>
+          <li><strong>P1 / Sev-1 Customer Escalations:</strong> Front the world's largest enterprise customers directly during critical P1 escalations — explaining complex technical situations clearly, managing stakeholder expectations under pressure, and driving resolution to restore mission-critical services.</li>
+          <li><strong>Executive &amp; Stakeholder Communication:</strong> Translate deep technical detail into clear narratives for diverse stakeholders — from customer executives to engineering teams — with a low-ego, collaborative, trust-building approach.</li>
+          <li><strong>Fortune 500 Consulting Delivery:</strong> At TCS, delivered large-scale infrastructure and cloud-migration projects directly for Fortune 500 clients, owning client relationships and exceeding SLA commitments.</li>
+          <li><strong>High Agency Under Ambiguity:</strong> Operate autonomously across a large, complex organization — spanning many teams, tools, data centers, and modules — exactly the ambiguity an FDE navigates in enterprise customer environments.</li>
+          <li><strong>Enterprise Scale &amp; Reliability:</strong> Keep LLM and infrastructure solutions running in demanding production environments serving 7,000+ customers at 99.95%+ availability.</li>
         </ul>
       </div>
     </section>
@@ -618,19 +678,19 @@
         </div>
 
         <ul class="achievements">
-          <li><strong>Team Building & Leadership:</strong> Built and led 22-person Budapest-based security operations team managing enterprise-scale OS patching operations 24/7 with zero downtime</li>
+          <li><strong>Hands-On AI/LLM Delivery:</strong> Built and deployed a production MCP server, an AI-first context-repository product, and n8n agentic workflows (detailed above) — bringing frontier LLM capability directly into enterprise operations</li>
+          <li><strong>Led Design &amp; Delivery of AI Systems:</strong> Led the design and delivery of RAG pipelines (Claude/GPT-4) and ML-driven incident intelligence over 240+ incident patterns and 100+ exception types, cutting MTTR by 70%</li>
+          <li><strong>Team Building &amp; Leadership:</strong> Built and led 22-person Budapest-based security operations team managing enterprise-scale OS patching operations 24/7 with zero downtime</li>
           <li><strong>Enterprise Security Patching:</strong> Owned OS security patching strategy for 34,000+ VMs across 20+ datacenters covering SUSE, RedHat, Windows, Linux, and critical databases (SAP HANA, MS SQL) using Tanium platform</li>
-          <li><strong>Critical Patch Management:</strong> Led release validation and deployment of critical security patches across multi-OS infrastructure ensuring zero-downtime operations and compliance</li>
           <li><strong>Service Ownership:</strong> Managed enterprise HXM SaaS platforms serving 7,000+ customers with 99.95%+ availability across 21,000+ VMs in 20+ datacenters</li>
-          <li><strong>AI/ML Transformation:</strong> Led SRE operations transformation through AI integration, reducing operational overhead by 40%</li>
-          <li><strong>Critical Incident Leadership:</strong> Led global Sev-1/Sev-2 incident response, achieving 99.5% SLA compliance</li>
-          <li><strong>Strategic Projects:</strong> Led Oracle-to-HANA migration (3,000+ customers) and established datacenter in 90 days</li>
+          <li><strong>Critical Incident &amp; Customer Leadership:</strong> Led global Sev-1/Sev-2 incident response and fronted P1 customer escalations directly, achieving 99.5% SLA compliance</li>
+          <li><strong>Strategic Projects:</strong> Led Oracle-to-HANA migration (3,000+ customers) and established a datacenter in 90 days</li>
           <li><strong>Automation Excellence:</strong> Implemented Kubernetes, Prometheus, Grafana, Dynatrace, Splunk, improving efficiency by 60%</li>
           <li><strong>DevOps Pipeline:</strong> Architected CI/CD improving deployment from monthly to daily releases</li>
           <li><strong>Cloud Infrastructure:</strong> Managed hybrid cloud optimizing costs by €2M annually (30% reduction)</li>
           <li><strong>Performance Engineering:</strong> Reduced API response times from 2.5s to 300ms</li>
-          <li><strong>Team Leadership:</strong> Mentored 22+ engineers; certified Docker & Kubernetes trainer</li>
-          <li><strong>Disaster Recovery:</strong> Architected multi-region DR achieving RPO < 15 min, RTO < 1 hour</li>
+          <li><strong>Team Leadership:</strong> Mentored 22+ engineers; certified Docker &amp; Kubernetes trainer</li>
+          <li><strong>Disaster Recovery:</strong> Architected multi-region DR achieving RPO &lt; 15 min, RTO &lt; 1 hour</li>
         </ul>
       </div>
 
@@ -662,39 +722,39 @@
 
     <!-- Key Projects -->
     <section class="section">
-      <h2 class="section-title">Key Strategic Projects</h2>
+      <h2 class="section-title">Key AI &amp; Platform Projects</h2>
 
       <div class="cards-grid">
         <div class="card">
-          <div class="card-title">🚀 AI Knowledge Management</div>
-          <div class="card-meta">2024-Present</div>
+          <div class="card-title">🧩 MCP Server + RAG Knowledge Base</div>
+          <div class="card-meta">2024-Present · Built &amp; deployed</div>
           <ul class="achievements">
-            <li>27 case documents, 240+ incidents</li>
-            <li>103 SAP KBAs integrated</li>
-            <li>100+ exceptions from 1,335 JIRA tickets</li>
+            <li>Live MCP server: <code>list_cases</code>, semantic <code>search_cases</code></li>
+            <li>38 case docs from 1,393 SNOW + 811 JIRA tickets</li>
+            <li>RAG export: 203 chunks, 103 SAP KBAs</li>
             <li><strong>Impact:</strong> 70% MTTR reduction</li>
           </ul>
         </div>
 
         <div class="card">
+          <div class="card-title">📚 AI-First Context Repository</div>
+          <div class="card-meta">2024-Present · Built, production</div>
+          <ul class="achievements">
+            <li>Dual-mode: human vs AI/LLM absorption</li>
+            <li>Anchor-addressable + governance metadata</li>
+            <li>MCP-enumerable registries for agents</li>
+            <li><strong>Impact:</strong> Turn-one accuracy for any agent</li>
+          </ul>
+        </div>
+
+        <div class="card">
           <div class="card-title">🎯 Predictive Incident Detection</div>
-          <div class="card-meta">2023-2024</div>
+          <div class="card-meta">2023-2024 · Led delivery</div>
           <ul class="achievements">
             <li>50M+ log events analyzed daily</li>
             <li>85% prediction accuracy</li>
             <li>False positives: 60% → 20%</li>
             <li><strong>Impact:</strong> €5M revenue protected</li>
-          </ul>
-        </div>
-
-        <div class="card">
-          <div class="card-title">☁️ Infrastructure Modernization</div>
-          <div class="card-meta">2022-2023</div>
-          <ul class="achievements">
-            <li>200+ apps migrated to Kubernetes</li>
-            <li>€2M annual cost reduction</li>
-            <li>Daily deployments (30x improvement)</li>
-            <li><strong>Impact:</strong> 99.95% uptime</li>
           </ul>
         </div>
       </div>
@@ -706,16 +766,32 @@
 
       <div class="skills-section">
         <div class="skills-category">
-          <div class="skills-category-title">🤖 AI/ML & Data Science</div>
+          <div class="skills-category-title">💻 Languages &amp; AI Engineering</div>
           <div class="skills-grid">
+            <div class="skill-tag">Python</div>
+            <div class="skill-tag">TypeScript / JavaScript</div>
+            <div class="skill-tag">Bash</div>
+            <div class="skill-tag">MCP (Model Context Protocol)</div>
             <div class="skill-tag">LLM Integration (Claude, GPT-4)</div>
-            <div class="skill-tag">Vector Databases</div>
             <div class="skill-tag">RAG Systems</div>
+            <div class="skill-tag">Agent Development</div>
             <div class="skill-tag">Prompt Engineering</div>
+            <div class="skill-tag">Evaluation Frameworks</div>
+            <div class="skill-tag">Vector Databases</div>
+            <div class="skill-tag">n8n Workflow Automation</div>
+            <div class="skill-tag">LangChain / LlamaIndex</div>
+            <div class="skill-tag">SAP AI Core</div>
+          </div>
+        </div>
+
+        <div class="skills-category">
+          <div class="skills-category-title">🤖 ML &amp; Data Science</div>
+          <div class="skills-grid">
             <div class="skill-tag">MLOps</div>
             <div class="skill-tag">Anomaly Detection</div>
             <div class="skill-tag">Python ML Stack</div>
             <div class="skill-tag">NLP</div>
+            <div class="skill-tag">Semantic Search</div>
           </div>
         </div>
 

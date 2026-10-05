@@ -411,6 +411,16 @@
       color: #a9b8ff;
     }
 
+    .subsection {
+      margin-top: 40px;
+    }
+
+    .subsection-title {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -539,69 +549,131 @@
 
     @media print {
       @page {
-        margin: 12mm;
+        margin: 10mm 12mm;
       }
       * {
         animation: none !important;
         transition: none !important;
       }
-      body {
+      html, body {
         background: white !important;
         color: #1a1a1a !important;
+        line-height: 1.4 !important;
+        font-size: 10.5pt !important;
       }
-      body::before {
-        display: none !important;
-      }
+      body::before { display: none !important; }
+
+      /* Compact header — not a full page */
       .hero-section {
-        min-height: auto !important;
-        padding: 0 0 20px !important;
+        min-height: 0 !important;
+        padding: 0 0 10px !important;
+        margin: 0 !important;
         background: none !important;
+        display: block !important;
+        text-align: center;
+        border-bottom: 2px solid #0b1f4d;
+        page-break-after: avoid;
       }
+      .profile-container { margin: 0 0 8px !important; }
       .profile-img {
+        width: 64px !important;
+        height: 64px !important;
+        font-size: 26px !important;
+        margin: 0 auto 8px !important;
         box-shadow: none !important;
-        -webkit-print-color-adjust: exact;
+        border-radius: 50% !important;
         print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
       }
-      .name, .section-title {
+      .name {
+        font-size: 22pt !important;
+        margin-bottom: 4px !important;
         -webkit-text-fill-color: #0b1f4d !important;
         color: #0b1f4d !important;
         background: none !important;
       }
-      .tagline, .contact-item { color: #333 !important; }
-      .contact-item a { color: #1a4b9e !important; }
-      .container { padding: 0 10px !important; }
-      .section { margin-bottom: 24px !important; }
-      .section-title { page-break-after: avoid; }
+      .tagline {
+        font-size: 11pt !important;
+        margin-bottom: 8px !important;
+        color: #333 !important;
+      }
+      .contact-info { gap: 16px !important; margin: 0 !important; }
+      .contact-item { font-size: 9.5pt !important; color: #333 !important; }
+      .contact-item a { color: #1a4b9e !important; text-decoration: none; }
+
+      /* Tight layout */
+      .container { padding: 14px 0 0 !important; max-width: 100% !important; }
+      .section { margin-bottom: 14px !important; }
+      .section-title {
+        font-size: 14pt !important;
+        margin-bottom: 8px !important;
+        padding-bottom: 3px !important;
+        border-bottom: 1px solid #c7cde0;
+        -webkit-text-fill-color: #0b1f4d !important;
+        color: #0b1f4d !important;
+        background: none !important;
+        page-break-after: avoid;
+      }
+
       .card, .summary-card, .highlight-card, .education-card {
         background: #f7f8fb !important;
         border: 1px solid #d1d5e0 !important;
+        border-radius: 8px !important;
+        padding: 12px 16px !important;
+        margin-bottom: 10px !important;
         box-shadow: none !important;
         transform: none !important;
         page-break-inside: avoid;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
-      .highlight-title, .card-title, .skills-category-title, .degree { color: #0b1f4d !important; }
-      .card-subtitle, .institution { color: #1a4b9e !important; }
-      .achievements li, .card-meta, .summary-text, .edu-date { color: #2a2a2a !important; }
+      .summary-text { font-size: 10pt !important; line-height: 1.45 !important; text-align: left !important; color: #2a2a2a !important; }
+      .highlight-title { font-size: 11.5pt !important; margin-bottom: 8px !important; color: #0b1f4d !important; }
+      .card-title { font-size: 11.5pt !important; margin-bottom: 5px !important; color: #0b1f4d !important; }
+      .card-subtitle, .institution { font-size: 10pt !important; margin-bottom: 3px !important; color: #1a4b9e !important; }
+      .card-meta { font-size: 9pt !important; margin-bottom: 8px !important; color: #555 !important; }
+      .card-note { font-size: 9.5pt !important; padding: 8px 12px !important; margin-bottom: 10px !important; background: #eef1f8 !important; border-left: 3px solid #1a4b9e !important; color: #2a2a2a !important; }
+      .skills-category-title, .degree { color: #0b1f4d !important; }
+      .subsection { margin-top: 14px !important; page-break-inside: avoid; }
+      .subsection-title {
+        color: #0b1f4d !important;
+        font-size: 11.5pt !important;
+        margin-bottom: 8px !important;
+        page-break-after: avoid;
+      }
+      .skills-category { margin-bottom: 10px !important; }
+      .skills-category-title { font-size: 10.5pt !important; margin-bottom: 6px !important; }
+      .skills-grid { gap: 6px !important; }
+
+      .achievements li {
+        font-size: 9.8pt !important;
+        line-height: 1.4 !important;
+        margin-bottom: 5px !important;
+        padding-left: 16px !important;
+        color: #2a2a2a !important;
+      }
       .achievements li strong, .summary-text strong { color: #0b1f4d !important; }
-      .achievements li:before { color: #1a4b9e !important; }
+      .achievements li:before { color: #1a4b9e !important; font-size: 1em !important; }
+
+      .cards-grid { gap: 10px !important; }
+      .edu-date { font-size: 9pt !important; color: #555 !important; }
+
       .skill-tag, .cert-item {
         background: #eef1f8 !important;
         border: 1px solid #c7cde0 !important;
         color: #1f2a44 !important;
+        font-size: 9pt !important;
+        padding: 4px 10px !important;
         print-color-adjust: exact;
         -webkit-print-color-adjust: exact;
       }
+      .cert-item { padding: 8px 12px !important; }
+      .certs-grid { gap: 8px !important; margin-top: 12px !important; }
       code {
         background: #eef1f8 !important;
         border: 1px solid #c7cde0 !important;
         color: #1a4b9e !important;
-      }
-      .card-note {
-        background: #eef1f8 !important;
-        border-left: 3px solid #1a4b9e !important;
-        color: #2a2a2a !important;
+        font-size: 0.85em !important;
       }
     }
   </style>
@@ -867,8 +939,8 @@
         <div class="edu-date">2006 – 2010</div>
       </div>
 
-      <div style="margin-top: 40px;">
-        <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 20px;">Professional Certifications</h3>
+      <div class="subsection">
+        <h3 class="subsection-title">Professional Certifications</h3>
         <div class="certs-grid">
           <div class="cert-item">✓ Microsoft Azure Certified</div>
           <div class="cert-item">✓ Google Cloud Platform</div>
@@ -879,8 +951,8 @@
         </div>
       </div>
 
-      <div style="margin-top: 40px;">
-        <h3 style="color: #ffffff; font-size: 1.5rem; margin-bottom: 20px;">Languages</h3>
+      <div class="subsection">
+        <h3 class="subsection-title">Languages</h3>
         <div class="skills-grid">
           <div class="skill-tag">English - Fluent</div>
           <div class="skill-tag">Hindi - Native</div>
